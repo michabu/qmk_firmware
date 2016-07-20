@@ -28,20 +28,20 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE]=KEYMAP(
     //left half
-    KC_ESC,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,
-    KC_TAB,   DE_OSX_Q, DE_OSX_W, DE_OSX_E, DE_OSX_R, DE_OSX_T, KC_VOLU /* vol+ */,
-    MO(SYMB), DE_OSX_A, DE_OSX_S, DE_OSX_D, DE_OSX_F, DE_OSX_G,
-    MO(SYMB), DE_OSX_Y, DE_OSX_X, DE_OSX_C, DE_OSX_V, DE_OSX_B, KC_VOLD /* vol- */,
-    KC_F13,   KC_F14,   KC_LCTL,  KC_LALT,  KC_LGUI,
-                                            KC_MUTE,  KC_MPRV /* prev */,
-                                                      KC_NO  /* KC_SYSTEM_SLEEP reserved */,
-                                  KC_LSFT,  MO(NAVI), KC_ENT,
+    KC_ESC,       KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,
+    KC_TAB,       DE_OSX_Q, DE_OSX_W, DE_OSX_E, DE_OSX_R, DE_OSX_T, KC_VOLU /* vol+ */,
+    MO(SYMB),     DE_OSX_A, DE_OSX_S, DE_OSX_D, DE_OSX_F, DE_OSX_G,
+    KC_LSFT,      DE_OSX_Y, DE_OSX_X, DE_OSX_C, DE_OSX_V, DE_OSX_B, KC_VOLD /* vol- */,
+    DE_OSX_LESS,  KC_SPC,   KC_LCTL,  KC_LALT,  KC_LGUI,
+                                                KC_MUTE,  KC_MPRV /* prev */,
+                                                          KC_NO  /* KC_SYSTEM_SLEEP reserved */,
+                                      MO(NAVI), KC_LSFT,  KC_ENT,
     //right half
     KC_F7,   KC_F8,    KC_F9,    KC_F10,      KC_F11,     KC_F12,      DE_OSX_SS,
     KC_PSCR, DE_OSX_Z, DE_OSX_U, DE_OSX_I,    DE_OSX_O,   DE_OSX_P,    DE_OSX_UE,
              DE_OSX_H, DE_OSX_J, DE_OSX_K,    DE_OSX_L,   DE_OSX_OE,   DE_OSX_AE,
-    KC_PAUS, DE_OSX_N, DE_OSX_M, DE_OSX_COMM, DE_OSX_DOT, DE_OSX_MINS, MO(SYMB),
-                       KC_SPC,   KC_RALT,     KC_RGUI,    KC_F15,      KC_F16,
+    KC_PAUS, DE_OSX_N, DE_OSX_M, DE_OSX_COMM, DE_OSX_DOT, DE_OSX_MINS, KC_RSFT,
+                       KC_SPC,   KC_RALT,     KC_RGUI,    KC_F13,      KC_F14,
     KC_MNXT, KC_MPLY,
     MEH_T(KC_NO) /* ctrl+shift+alt */,
     C_S_T(KC_NO) /* ctrl+shift */, KC_RCTL, MO(SYMB)),
@@ -66,14 +66,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS,     KC_TRNS),
 [NAVI]=KEYMAP(
     //left half
-    KC_TRNS, KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,
-    KC_TRNS, KC_PGUP, KC_BSPC, KC_UP,   KC_DELT, KC_PGDN, KC_TRNS,
-    KC_TRNS, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
-    KC_TRNS, KC_ESC,  KC_TAB,  KC_INS,  KC_ENT,  KC_NO,   KC_TRNS,
-                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                                                 KC_TRNS, KC_TRNS,
-                                                          KC_TRNS,
-                                        KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS,     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,
+    KC_TRNS,     KC_PGUP, KC_BSPC, KC_UP,   KC_DELT, KC_PGDN, KC_TRNS,
+    KC_TRNS,     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
+    KC_TRNS,     KC_ESC,  KC_TAB,  KC_INS,  KC_ENT,  KC_NO,   KC_TRNS,
+                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                                                     KC_TRNS, KC_TRNS,
+                                                              KC_TRNS,
+                                            KC_TRNS, KC_TRNS, KC_TRNS,
     //right half
     KC_F7,   KC_F8,    KC_ESC,   KC_PSLS,     KC_PAST,    KC_PMNS,    KC_TRNS,
     KC_TRNS, KC_PGUP,  KC_7,     KC_8,        KC_9,       KC_PPLS,    KC_TRNS,
@@ -270,10 +270,10 @@ void matrix_scan_user(void) {
   ergodox_right_led_3_off();
   switch (layer) {
     case SYMB:
-      ergodox_right_led_1_on();
+      //ergodox_right_led_1_on();
       break;
     case NAVI:
-      ergodox_right_led_2_on();
+      //ergodox_right_led_2_on();
       break;
     default:
     // none
