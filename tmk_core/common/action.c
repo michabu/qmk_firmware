@@ -527,6 +527,11 @@ void register_code(uint8_t code)
 */
 #endif
         {
+            // TODO: Buerkle: an dieser Stelle könnte ich registrieren welche char gedrückt wurden um eine Diaktritiks Funktion zu implementieren.
+            // Dafür müssten die letzten n (3?) Zeichen, die in Folge gesendet (= getippt) werden gespeichert werden um beim Auslösen einer
+            // Diakritik Funktion zu Prüfen ob hinter dieser Kombination ein Makro ( n x BKSP; Unicode... oder Zeichenfolge) steckt, das ausgeführt
+            // werden soll. Frage ist ob es eine zeitliche Überwachung geben muss und ob bestimmte Tastenkombinationen den Puffer löschen -> 
+            // Sicherlich zumindest das Auslösen von Diaktritik oder Compose selbst.
             add_key(code);
             send_keyboard_report();
         }
