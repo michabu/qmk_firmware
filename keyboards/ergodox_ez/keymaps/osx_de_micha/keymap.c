@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS,     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,
     KC_TRNS,     KC_PGUP, KC_BSPC, KC_UP,   KC_DELT, KC_PGDN, KC_TRNS,
     KC_TRNS,     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
-    KC_TRNS,     KC_ESC,  KC_TAB,  KC_INS,  KC_ENT,  KC_NO,   KC_TRNS,
+    KC_TRNS,     KC_ESC,  KC_TAB,  KC_INS,  KC_ENT,  LGUI(DE_OSX_Z),   KC_TRNS,
                           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                                      KC_TRNS, KC_TRNS,
                                                               KC_TRNS,
